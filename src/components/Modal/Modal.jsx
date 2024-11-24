@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";  
-import image from "../../assets/Couple.jpg";
+import image from "../../assets/couple.jpg";
 import "./Modal.css";
 
 const Modal = ({ showModal, closeModal, coupleNames }) => {
