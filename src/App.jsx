@@ -1,19 +1,32 @@
-
 import { useState } from "react";
 import Modal from "./components/Modal/Modal"; 
-import "./App.css"; 
+import ModalTwo from "./components/ModalTwo/ModalTwo";
+import "./App.css";
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
+  const [showModalOne, setShowModalOne] = useState(false);
+  const [showModalTwo, setShowModalTwo] = useState(false);
 
   return (
     <div className="App">
-      <h1>A Gift for you</h1>
-      <button onClick={openModal}>Open Surprize</button>
-      <Modal showModal={showModal} closeModal={closeModal} />
+      <div>
+        <h1>A Meaning of LOVE</h1>
+        <button onClick={() => setShowModalOne(true)}>Look Them</button>
+        <Modal 
+          showModal={showModalOne} 
+          closeModal={() => setShowModalOne(false)} 
+          coupleNames="SankeerthanaSuman" 
+        />
+      </div>
+      <div>
+        <h1>A Meaning of CUTIE</h1>
+        <button onClick={() => setShowModalTwo(true)}>Look Them</button>
+        <ModalTwo 
+          showModal={showModalTwo} 
+          closeModal={() => setShowModalTwo(false)} 
+          childNames="NiviKiwi" 
+        />
+      </div>
     </div>
   );
 }
